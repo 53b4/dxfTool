@@ -6,10 +6,11 @@ dxfTool.exe path-to-source-fie radius [path-to-output-dxf-fie]
 
 - each line in source file contains coordinates of cirle centre with comma as separator. Following three lines for three circles examplexample:  
 
-
+~~~~
 42.02500,24.57500,0.00000  
 9.27000,16.41000,-3.95500  
 55.69500,20.11500,0.38000   
+~~~~
 
 - radius with double precision 
 
