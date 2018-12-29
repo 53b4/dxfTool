@@ -1,5 +1,5 @@
 # dxfTool
-Simple tool to create dxf file with circles inside that locations are defined in separate file. All circles has the same radius.  This project uses on netDxf library
+Simple tool to create dxf file with circles inside that locations are defined in separate file. All circles has the same radius.  This project uses netDxf library
 
 usage: 
 dxfTool.exe path-to-source-fie radius [path-to-output-dxf-fie]
