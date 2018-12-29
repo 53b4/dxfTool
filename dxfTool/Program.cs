@@ -1,4 +1,5 @@
 ﻿using System;
+using System.CodeDom.Compiler;
 using System.Collections;
 using System.Collections.Generic;
 using System.IO;
@@ -48,6 +49,7 @@ namespace DxfTool
             dxf.AddEntity(circle3s);
 
             dxf.Save((string)arguments[2]);
+            Console.WriteLine($"generate file: {arguments[2]}");
         }
 
         private static List<string> ValidateArguments(string[] args)
@@ -110,19 +112,21 @@ namespace DxfTool
 
             if (args.Length > 2)
             {
-                Directory.CreateDirectory(Path.GetFullPath(args[2]));
+                if (!string.IsNullOrEmpty(Path.GetDirectoryName(args[2])))
+                    Directory.CreateDirectory(Path.GetDirectoryName(args[2]));
+
                 if (!Path.GetFileName(args[2]).EndsWith(Constans.DXFEXT))
                     arguments.Add($"{args[2]}{Constans.DXFEXT}");
                 else
                     arguments.Add(args[2]);
             }
             else
-                arguments.Add($"{args[0]}.dxf");
+                arguments.Add(Path.ChangeExtension(args[0], Constans.DXFEXT));
 
             Console.WriteLine("arguments: " + Environment.NewLine);
+
             foreach (var argument in arguments)
                 Console.WriteLine(argument + Environment.NewLine);
-
 
             return arguments;
         }
