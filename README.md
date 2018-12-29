@@ -3,8 +3,8 @@ Simple tool to create dxf file with circles inside that locations are defined in
 
 usage:  
 dxfTool.exe path-to-source-fie radius [path-to-output-dxf-fie]
-
-- each line in source file contains coordinates of cirle centre with comma as separator. Following three lines for three circles examplexample:  
+  
+1. each line in source file contains coordinates of cirle centre with comma as separator. Following three lines for three circles examplexample:  
 
 ~~~~
 42.02500,24.57500,0.00000  
@@ -12,6 +12,6 @@ dxfTool.exe path-to-source-fie radius [path-to-output-dxf-fie]
 55.69500,20.11500,0.38000   
 ~~~~
 
-- radius with double precision 
+2. radius with double precision 
 
-- third parameter is optional name and path of output file. Input name with extension dxf will be used if this parameter is not specified. 
+3. third parameter is optional name and path of output file. Input name with extension dxf will be used if this parameter is not specified. 
