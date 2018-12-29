@@ -45,33 +45,9 @@ namespace DxfTool
             var dxf = new DxfDocument(DxfVersion.AutoCad2007);
             dxf.Viewport.ShowGrid = false;
 
-
-            //var center0 = new Vector3(10, 19, 12);
-            //var center1 = new Vector3(11, 18, 12);
-            //var center2 = new Vector3(12, 17, 12);
-            //var center3 = new Vector3(13, 16, 12);
-
-            //Circle c0 = new Circle(center0, 13);
-            //Circle c1 = new Circle(center1, 14);
-            //Circle c2 = new Circle(center2, 15);
-            //Circle c3 = new Circle(center3, 16);
-
-            //var l = new List<Circle>();
-            //l.Add(c0);
-            //l.Add(c1);
-            //l.Add(c2);
-            //l.Add(c3);
-
-            ////dxf.AddEntity(c1);
-
-            //dxf.AddEntity(l);
-
-
             dxf.AddEntity(circle3s);
-            //dxf.AddEntity(circle2s);
 
-            dxf.Save("test.dxf");
-
+            dxf.Save((string)arguments[2]);
         }
 
         private static List<string> ValidateArguments(string[] args)
