@@ -2,6 +2,7 @@
 using System.CodeDom.Compiler;
 using System.Collections;
 using System.Collections.Generic;
+using System.Globalization;
 using System.IO;
 using System.Linq;
 using System.Runtime.ExceptionServices;
@@ -49,7 +50,7 @@ namespace DxfTool
             dxf.AddEntity(circle3s);
 
             dxf.Save((string)arguments[2]);
-            Console.WriteLine($"generate file: {arguments[2]}");
+            Console.WriteLine($"{Environment.NewLine}generate file: {arguments[2]}");
         }
 
         private static List<string> ValidateArguments(string[] args)
@@ -61,14 +62,14 @@ namespace DxfTool
                 messages.Add(@"Enter at least two arguments.
                                - path to  source file 
                                - radius of circle with double precision 
-                               - optionally name of output file. input name with extension dxf as default will be used 
+                               - optional name of output file. Input name with extension dxf as default will be used 
                 ");
             }
             else if (!File.Exists(args[0]))
             {
-                messages.Add(@"Incorrect path or file name. Should be file filename or path to existing directory");
+                messages.Add(@"Incorrect path to file with definitions. Should be path to existing file.");
             }
-            else if (!double.TryParse(args[1], out res))
+            else if (!double.TryParse(args[1], NumberStyles.Any, CultureInfo.InvariantCulture, out res))
             {
                 messages.Add(@"Incorrect format of radius -  enter double value, use coma as separator");
             }
@@ -108,7 +109,7 @@ namespace DxfTool
         {
             var arguments = new ArrayList(3);
             arguments.Add(args[0]);
-            arguments.Add(Double.Parse(args[1]));
+            arguments.Add(Double.Parse(args[1], CultureInfo.InvariantCulture));
 
             if (args.Length > 2)
             {
