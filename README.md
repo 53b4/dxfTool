@@ -1,14 +1,15 @@
 # dxfTool
 Simple tool to create dxf file with circles inside that locations are defined in separate file. All circles has the same radius.  This project uses netDxf library
 
-usage: 
+usage:  
 dxfTool.exe path-to-source-fie radius [path-to-output-dxf-fie]
 
-- each line in source file contains coordinates of cirle centre with following format. Comma is used as separator. Following three lines for three circles examplexample 
+- each line in source file contains coordinates of cirle centre with comma as separator. Following three lines for three circles examplexample:  
 
-42,025 24,575 0
-9,27 16,41 -3,955
-55,695 20,115 0,38
+
+42.02500,24.57500,0.00000  
+9.27000,16.41000,-3.95500  
+55.69500,20.11500,0.38000   
 
 - radius with double precision 
 
