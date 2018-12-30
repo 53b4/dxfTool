@@ -14,4 +14,4 @@ dxfTool.exe path-to-source-fie radius [path-to-output-dxf-fie]
 
 2. radius with double precision 
 
-3. third parameter is optional name and path to output file. Argument nr 1 with extension dxf will be used if this parameter is not specified. 
+3. third parameter is optional name and path to output file. Name of source file (argument nr 1) with extension dxf will be used if this parameter is not specified. 
